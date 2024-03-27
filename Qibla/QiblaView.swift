@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct QiblaCompassView: View {
+struct QiblaView: View {
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -20,5 +20,5 @@ struct QiblaCompassView: View {
 }
 
 #Preview {
-    QiblaCompassView()
+    QiblaView()
 }

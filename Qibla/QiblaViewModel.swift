@@ -8,6 +8,6 @@
 import Foundation
 import MapKit
 
-class QiblaCompassViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
+class QiblaViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     
 }
