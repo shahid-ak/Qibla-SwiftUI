@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct QiblaView: View {
+    
+    @StateObject var viewModel = QiblaViewModel()
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Image(systemName: "arrow.up")
+                .rotationEffect(viewModel.directionOfKabah)
+            Text("\(viewModel.directionOfKabahTo360Format)")
         }
         .padding()
+        .onAppear(){
+            viewModel.checkIfLocationServicesIsEnabled()
+        }
     }
 }
 
