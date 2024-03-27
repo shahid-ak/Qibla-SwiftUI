@@ -8,19 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		F763AD792BB19CF0001C431F /* QiblaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F763AD782BB19CF0001C431F /* QiblaApp.swift */; };
-		F763AD7B2BB19CF0001C431F /* QiblaCompassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F763AD7A2BB19CF0001C431F /* QiblaCompassView.swift */; };
+		F763AD7B2BB19CF0001C431F /* QiblaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F763AD7A2BB19CF0001C431F /* QiblaView.swift */; };
 		F763AD7D2BB19CF2001C431F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F763AD7C2BB19CF2001C431F /* Assets.xcassets */; };
 		F763AD802BB19CF2001C431F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F763AD7F2BB19CF2001C431F /* Preview Assets.xcassets */; };
-		F763AD872BB19E82001C431F /* QiblaCompassViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F763AD862BB19E82001C431F /* QiblaCompassViewModel.swift */; };
+		F763AD872BB19E82001C431F /* QiblaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F763AD862BB19E82001C431F /* QiblaViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F763AD752BB19CF0001C431F /* Qibla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qibla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F763AD782BB19CF0001C431F /* QiblaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiblaApp.swift; sourceTree = "<group>"; };
-		F763AD7A2BB19CF0001C431F /* QiblaCompassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiblaCompassView.swift; sourceTree = "<group>"; };
+		F763AD7A2BB19CF0001C431F /* QiblaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiblaView.swift; sourceTree = "<group>"; };
 		F763AD7C2BB19CF2001C431F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F763AD7F2BB19CF2001C431F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		F763AD862BB19E82001C431F /* QiblaCompassViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiblaCompassViewModel.swift; sourceTree = "<group>"; };
+		F763AD862BB19E82001C431F /* QiblaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiblaViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +54,8 @@
 			isa = PBXGroup;
 			children = (
 				F763AD782BB19CF0001C431F /* QiblaApp.swift */,
-				F763AD7A2BB19CF0001C431F /* QiblaCompassView.swift */,
-				F763AD862BB19E82001C431F /* QiblaCompassViewModel.swift */,
+				F763AD862BB19E82001C431F /* QiblaViewModel.swift */,
+				F763AD7A2BB19CF0001C431F /* QiblaView.swift */,
 				F763AD7C2BB19CF2001C431F /* Assets.xcassets */,
 				F763AD7E2BB19CF2001C431F /* Preview Content */,
 			);
@@ -140,9 +140,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F763AD7B2BB19CF0001C431F /* QiblaCompassView.swift in Sources */,
+				F763AD7B2BB19CF0001C431F /* QiblaView.swift in Sources */,
 				F763AD792BB19CF0001C431F /* QiblaApp.swift in Sources */,
-				F763AD872BB19E82001C431F /* QiblaCompassViewModel.swift in Sources */,
+				F763AD872BB19E82001C431F /* QiblaViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +279,7 @@
 				DEVELOPMENT_TEAM = 68NSAKSP6G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "\"Need location acess to calculate accurate Qibla direction";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -308,6 +309,7 @@
 				DEVELOPMENT_TEAM = 68NSAKSP6G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "\"Need location acess to calculate accurate Qibla direction";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
