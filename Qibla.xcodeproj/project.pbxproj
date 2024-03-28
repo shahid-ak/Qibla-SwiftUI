@@ -7,20 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F70D99232BB44D1C00A15019 /* CompassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70D99222BB44D1C00A15019 /* CompassView.swift */; };
 		F763AD792BB19CF0001C431F /* QiblaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F763AD782BB19CF0001C431F /* QiblaApp.swift */; };
 		F763AD7B2BB19CF0001C431F /* QiblaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F763AD7A2BB19CF0001C431F /* QiblaView.swift */; };
 		F763AD7D2BB19CF2001C431F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F763AD7C2BB19CF2001C431F /* Assets.xcassets */; };
 		F763AD802BB19CF2001C431F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F763AD7F2BB19CF2001C431F /* Preview Assets.xcassets */; };
 		F763AD872BB19E82001C431F /* QiblaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F763AD862BB19E82001C431F /* QiblaViewModel.swift */; };
+		F7652CF12BB551410004BA8C /* MapKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7652CF02BB551410004BA8C /* MapKitHelper.swift */; };
+		F7652CF32BB5668D0004BA8C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7652CF22BB5668D0004BA8C /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F7652D092BB56F960004BA8C /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		F70D99222BB44D1C00A15019 /* CompassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassView.swift; sourceTree = "<group>"; };
 		F763AD752BB19CF0001C431F /* Qibla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qibla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F763AD782BB19CF0001C431F /* QiblaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiblaApp.swift; sourceTree = "<group>"; };
 		F763AD7A2BB19CF0001C431F /* QiblaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiblaView.swift; sourceTree = "<group>"; };
 		F763AD7C2BB19CF2001C431F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F763AD7F2BB19CF2001C431F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F763AD862BB19E82001C431F /* QiblaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiblaViewModel.swift; sourceTree = "<group>"; };
+		F7652CF02BB551410004BA8C /* MapKitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitHelper.swift; sourceTree = "<group>"; };
+		F7652CF22BB5668D0004BA8C /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +75,9 @@
 				F763AD782BB19CF0001C431F /* QiblaApp.swift */,
 				F763AD862BB19E82001C431F /* QiblaViewModel.swift */,
 				F763AD7A2BB19CF0001C431F /* QiblaView.swift */,
+				F70D99222BB44D1C00A15019 /* CompassView.swift */,
+				F7652CF02BB551410004BA8C /* MapKitHelper.swift */,
+				F7652CF22BB5668D0004BA8C /* Launch Screen.storyboard */,
 				F763AD7C2BB19CF2001C431F /* Assets.xcassets */,
 				F763AD7E2BB19CF2001C431F /* Preview Content */,
 			);
@@ -80,6 +102,7 @@
 				F763AD712BB19CF0001C431F /* Sources */,
 				F763AD722BB19CF0001C431F /* Frameworks */,
 				F763AD732BB19CF0001C431F /* Resources */,
+				F7652D092BB56F960004BA8C /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
@@ -128,6 +151,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7652CF32BB5668D0004BA8C /* Launch Screen.storyboard in Resources */,
 				F763AD802BB19CF2001C431F /* Preview Assets.xcassets in Resources */,
 				F763AD7D2BB19CF2001C431F /* Assets.xcassets in Resources */,
 			);
@@ -143,6 +167,8 @@
 				F763AD7B2BB19CF0001C431F /* QiblaView.swift in Sources */,
 				F763AD792BB19CF0001C431F /* QiblaApp.swift in Sources */,
 				F763AD872BB19E82001C431F /* QiblaViewModel.swift in Sources */,
+				F70D99232BB44D1C00A15019 /* CompassView.swift in Sources */,
+				F7652CF12BB551410004BA8C /* MapKitHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +227,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -258,7 +284,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -273,6 +299,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Qibla/Preview Content\"";
@@ -283,6 +310,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -303,6 +331,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Qibla/Preview Content\"";
@@ -313,6 +342,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
