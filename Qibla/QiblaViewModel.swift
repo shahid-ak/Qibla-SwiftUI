@@ -8,6 +8,10 @@
 import MapKit
 import SwiftUI
 
+enum Mode {
+    case ahead, right, left
+}
+
 class QiblaViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     let latOfKabah = 21.4225
@@ -19,6 +23,8 @@ class QiblaViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     var bearingOfKabah = Double()
     
+    @Published var currentLocation: String = "Featching....."
+    
     @Published var directionOfKabah = Angle() {
         didSet {
             var theDirectionOfKabah = directionOfKabah.degrees
@@ -26,10 +32,38 @@ class QiblaViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
                 theDirectionOfKabah += 360
             }
             directionOfKabahTo360Format = theDirectionOfKabah
+            print(directionOfKabahTo360Format)
+            if (directionOfKabahTo360Format > 335 && directionOfKabahTo360Format < 360)  || (directionOfKabahTo360Format >= 0 && directionOfKabahTo360Format < 25) {
+                withAnimation {
+                    mode = .ahead
+                }
+                if Int(directionOfKabahTo360Format) == 0 {
+                    let impactMed = UIImpactFeedbackGenerator(style: .heavy)
+                    impactMed.impactOccurred()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        impactMed.impactOccurred()
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                        impactMed.impactOccurred()
+                    }
+                }
+            } else {
+                if directionOfKabahTo360Format < 180 {
+                    withAnimation {
+                        mode = .right
+                    }
+                } else {
+                    withAnimation {
+                        mode = .left
+                    }
+                }
+            }
         }
     }
-    
+
     @Published var directionOfKabahTo360Format = 0.0
+
+    @Published var mode = Mode.ahead
     
     func checkIfLocationServicesIsEnabled(){
         locationManager = CLLocationManager()
@@ -61,6 +95,15 @@ class QiblaViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         let newLocation = locations.last!
         location = newLocation
         bearingOfKabah = getBearingBetweenTwoPoints1(location!, latitudeOfKabah: self.latOfKabah, longitudeOfKabah: self.lngOfKabah)
+        if currentLocation == "Featching....." {
+            location?.placemark { [weak self] placemark, error in
+                guard let placemark = placemark else {
+                    self?.currentLocation = "Unknown..."
+                    return
+                }
+                self?.currentLocation = placemark.streetName ?? "Unknown..."
+            }
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateHeading heading: CLHeading) {
