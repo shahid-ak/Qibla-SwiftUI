@@ -13,8 +13,9 @@ struct CompassView: View {
     @State var wave = false
     
     var body: some View {
-        
-        ZStack(){
+        GeometryReader { geo in
+            let smallerSide = geo.size.width < geo.size.height ? geo.size.width : geo.size.height
+            
             ZStack {
                 //Top Circle
                 VStack {
@@ -23,7 +24,6 @@ struct CompassView: View {
                         .frame(width: 18, height: 18)
                         .offset(y: -9)
                         .opacity(viewModel.mode == .ahead ? 0 : 1)
-                    
                     Spacer()
                 }
                 
@@ -42,22 +42,32 @@ struct CompassView: View {
                     }
                 }
                 
-                // Aroow with top circle
+                // Arrow with top circle
                 ZStack {
+                    //top circle
                     ZStack{
-                        Circle().fill(.white).frame(width: viewModel.mode == .ahead ? 32 : 18, height: viewModel.mode == .ahead ? 32 : 18)
+                        ZStack{
+                            Circle().fill(.white).frame(width: viewModel.mode == .ahead ? 32 : 18, height: viewModel.mode == .ahead ? 32 : 18)
+                            Image("qibla")
+                                .resizable()
+                                .frame(width: Int(viewModel.directionOfKabahTo360Format) == 0 ? 20 : 16, height: Int(viewModel.directionOfKabahTo360Format) == 0 ? 20 : 16)
+                                .opacity(viewModel.mode == .ahead ? 1 : 0)
+                        }
                         if viewModel.mode == .ahead {
                             PulsatingCircle(mode: $viewModel.mode)
                         }
                     }
-                    .offset(y: -312/2)
+                    .offset(y: -(geo.size.width)/2)
+                    
+                    //arrow
                     Image(systemName: "arrow.up")
-                        .font(.system(size: 192, weight: .bold))
+                        .font(.system(size: (geo.size.width) * 0.615, weight: .bold))
                         .foregroundColor(.white)
                 }
                 .rotationEffect(viewModel.directionOfKabah)
             }
-            .frame(maxWidth: .infinity, maxHeight: 312)
+            .frame(maxWidth: smallerSide, maxHeight: smallerSide)
+            .position(x: geo.frame(in: .local).midX, y: geo.frame(in: .local).maxY - smallerSide/2)
         }
     }
 }
@@ -79,8 +89,10 @@ struct PulsatingCircle: View {
                 .scaleEffect(animate ? 1 : 0)
         }
         .onAppear(){
-            animate = true
+            withAnimation(.linear(duration: 1).repeatForever(autoreverses: false)) {
+                animate = true
+            }
+            
         }
-        .animation(Animation.linear(duration: 1).repeatForever(autoreverses: true))
     }
 }
