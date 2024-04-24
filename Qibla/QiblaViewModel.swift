@@ -18,7 +18,6 @@ class QiblaViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     let lngOfKabah = 39.8262
     
     var location: CLLocation?
-    
     var locationManager = CLLocationManager()
     
     var bearingOfKabah = Double()
@@ -32,7 +31,6 @@ class QiblaViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
                 theDirectionOfKabah += 360
             }
             directionOfKabahTo360Format = theDirectionOfKabah
-            print(directionOfKabahTo360Format)
             if (directionOfKabahTo360Format > 335 && directionOfKabahTo360Format < 360)  || (directionOfKabahTo360Format >= 0 && directionOfKabahTo360Format < 25) {
                 withAnimation {
                     mode = .ahead
@@ -60,9 +58,8 @@ class QiblaViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
             }
         }
     }
-
+    
     @Published var directionOfKabahTo360Format = 0.0
-
     @Published var mode = Mode.ahead
     
     func checkIfLocationServicesIsEnabled(){
@@ -101,7 +98,7 @@ class QiblaViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
                     self?.currentLocation = "Unknown..."
                     return
                 }
-                self?.currentLocation = placemark.streetName ?? "Unknown..."
+                self?.currentLocation = placemark.neighborhood ?? "Unknown..."
             }
         }
     }
@@ -141,5 +138,4 @@ class QiblaViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         
         return radiansToDegrees(radiansBearing)
     }
-    
 }
