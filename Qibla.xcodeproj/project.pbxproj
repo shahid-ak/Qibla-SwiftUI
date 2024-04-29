@@ -7,15 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F70D99232BB44D1C00A15019 /* CompassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70D99222BB44D1C00A15019 /* CompassView.swift */; };
+		F71B8D882BD90D87009CAB36 /* QiblaWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B8D872BD90D87009CAB36 /* QiblaWatchApp.swift */; };
+		F71B8D8C2BD90D89009CAB36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F71B8D8B2BD90D89009CAB36 /* Assets.xcassets */; };
+		F71B8D8F2BD90D89009CAB36 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F71B8D8E2BD90D89009CAB36 /* Preview Assets.xcassets */; };
+		F71B8D922BD90D89009CAB36 /* QiblaWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F71B8D852BD90D87009CAB36 /* QiblaWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F7321E802BDA3B0500E5287C /* CompassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7321E7F2BDA3B0500E5287C /* CompassView.swift */; };
+		F7321E812BDA3B1100E5287C /* CompassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7321E7F2BDA3B0500E5287C /* CompassView.swift */; };
+		F7321E832BDA53D000E5287C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7321E822BDA53D000E5287C /* Constants.swift */; };
+		F7321E842BDA563B00E5287C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7321E822BDA53D000E5287C /* Constants.swift */; };
 		F763AD792BB19CF0001C431F /* QiblaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F763AD782BB19CF0001C431F /* QiblaApp.swift */; };
 		F763AD7B2BB19CF0001C431F /* QiblaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F763AD7A2BB19CF0001C431F /* QiblaView.swift */; };
 		F763AD7D2BB19CF2001C431F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F763AD7C2BB19CF2001C431F /* Assets.xcassets */; };
 		F763AD802BB19CF2001C431F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F763AD7F2BB19CF2001C431F /* Preview Assets.xcassets */; };
-		F763AD872BB19E82001C431F /* QiblaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F763AD862BB19E82001C431F /* QiblaViewModel.swift */; };
 		F7652CF12BB551410004BA8C /* MapKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7652CF02BB551410004BA8C /* MapKitHelper.swift */; };
 		F7652CF32BB5668D0004BA8C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7652CF22BB5668D0004BA8C /* Launch Screen.storyboard */; };
+		F795A5702BD920E70008F378 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B8D892BD90D87009CAB36 /* ContentView.swift */; };
+		F795A5762BD9294B0008F378 /* MapKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7652CF02BB551410004BA8C /* MapKitHelper.swift */; };
+		F795A5792BD92B450008F378 /* QiblaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F763AD862BB19E82001C431F /* QiblaViewModel.swift */; };
+		F795A57A2BD931670008F378 /* QiblaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F763AD862BB19E82001C431F /* QiblaViewModel.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F71B8D902BD90D89009CAB36 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F763AD6D2BB19CF0001C431F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F71B8D842BD90D87009CAB36;
+			remoteInfo = "QiblaWatch Watch App";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		F7652D092BB56F960004BA8C /* Embed Watch Content */ = {
@@ -24,6 +44,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
+				F71B8D922BD90D89009CAB36 /* QiblaWatch Watch App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -31,7 +52,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F70D99222BB44D1C00A15019 /* CompassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassView.swift; sourceTree = "<group>"; };
+		F71B8D852BD90D87009CAB36 /* QiblaWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QiblaWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F71B8D872BD90D87009CAB36 /* QiblaWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiblaWatchApp.swift; sourceTree = "<group>"; };
+		F71B8D892BD90D87009CAB36 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F71B8D8B2BD90D89009CAB36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F71B8D8E2BD90D89009CAB36 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F7321E7F2BDA3B0500E5287C /* CompassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassView.swift; sourceTree = "<group>"; };
+		F7321E822BDA53D000E5287C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F763AD752BB19CF0001C431F /* Qibla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qibla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F763AD782BB19CF0001C431F /* QiblaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiblaApp.swift; sourceTree = "<group>"; };
 		F763AD7A2BB19CF0001C431F /* QiblaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiblaView.swift; sourceTree = "<group>"; };
@@ -43,6 +70,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F71B8D822BD90D87009CAB36 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F763AD722BB19CF0001C431F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -53,10 +87,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F71B8D862BD90D87009CAB36 /* QiblaWatch Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				F71B8D872BD90D87009CAB36 /* QiblaWatchApp.swift */,
+				F71B8D892BD90D87009CAB36 /* ContentView.swift */,
+				F71B8D8B2BD90D89009CAB36 /* Assets.xcassets */,
+				F71B8D8D2BD90D89009CAB36 /* Preview Content */,
+			);
+			path = "QiblaWatch Watch App";
+			sourceTree = "<group>";
+		};
+		F71B8D8D2BD90D89009CAB36 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F71B8D8E2BD90D89009CAB36 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		F763AD6C2BB19CF0001C431F = {
 			isa = PBXGroup;
 			children = (
 				F763AD772BB19CF0001C431F /* Qibla */,
+				F71B8D862BD90D87009CAB36 /* QiblaWatch Watch App */,
 				F763AD762BB19CF0001C431F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				F763AD752BB19CF0001C431F /* Qibla.app */,
+				F71B8D852BD90D87009CAB36 /* QiblaWatch Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,9 +128,10 @@
 			isa = PBXGroup;
 			children = (
 				F763AD782BB19CF0001C431F /* QiblaApp.swift */,
-				F763AD862BB19E82001C431F /* QiblaViewModel.swift */,
 				F763AD7A2BB19CF0001C431F /* QiblaView.swift */,
-				F70D99222BB44D1C00A15019 /* CompassView.swift */,
+				F7321E7F2BDA3B0500E5287C /* CompassView.swift */,
+				F763AD862BB19E82001C431F /* QiblaViewModel.swift */,
+				F7321E822BDA53D000E5287C /* Constants.swift */,
 				F7652CF02BB551410004BA8C /* MapKitHelper.swift */,
 				F7652CF22BB5668D0004BA8C /* Launch Screen.storyboard */,
 				F763AD7C2BB19CF2001C431F /* Assets.xcassets */,
@@ -95,6 +151,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F71B8D842BD90D87009CAB36 /* QiblaWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F71B8D932BD90D89009CAB36 /* Build configuration list for PBXNativeTarget "QiblaWatch Watch App" */;
+			buildPhases = (
+				F71B8D812BD90D87009CAB36 /* Sources */,
+				F71B8D822BD90D87009CAB36 /* Frameworks */,
+				F71B8D832BD90D87009CAB36 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "QiblaWatch Watch App";
+			productName = "QiblaWatch Watch App";
+			productReference = F71B8D852BD90D87009CAB36 /* QiblaWatch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
 		F763AD742BB19CF0001C431F /* Qibla */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F763AD832BB19CF2001C431F /* Build configuration list for PBXNativeTarget "Qibla" */;
@@ -107,6 +180,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				F71B8D912BD90D89009CAB36 /* PBXTargetDependency */,
 			);
 			name = Qibla;
 			productName = Qibla;
@@ -123,6 +197,9 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					F71B8D842BD90D87009CAB36 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
 					F763AD742BB19CF0001C431F = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
@@ -142,11 +219,21 @@
 			projectRoot = "";
 			targets = (
 				F763AD742BB19CF0001C431F /* Qibla */,
+				F71B8D842BD90D87009CAB36 /* QiblaWatch Watch App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F71B8D832BD90D87009CAB36 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F71B8D8F2BD90D89009CAB36 /* Preview Assets.xcassets in Resources */,
+				F71B8D8C2BD90D89009CAB36 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F763AD732BB19CF0001C431F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -160,21 +247,103 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F71B8D812BD90D87009CAB36 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F795A57A2BD931670008F378 /* QiblaViewModel.swift in Sources */,
+				F795A5702BD920E70008F378 /* ContentView.swift in Sources */,
+				F7321E842BDA563B00E5287C /* Constants.swift in Sources */,
+				F71B8D882BD90D87009CAB36 /* QiblaWatchApp.swift in Sources */,
+				F795A5762BD9294B0008F378 /* MapKitHelper.swift in Sources */,
+				F7321E812BDA3B1100E5287C /* CompassView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F763AD712BB19CF0001C431F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7321E802BDA3B0500E5287C /* CompassView.swift in Sources */,
 				F763AD7B2BB19CF0001C431F /* QiblaView.swift in Sources */,
+				F7321E832BDA53D000E5287C /* Constants.swift in Sources */,
 				F763AD792BB19CF0001C431F /* QiblaApp.swift in Sources */,
-				F763AD872BB19E82001C431F /* QiblaViewModel.swift in Sources */,
-				F70D99232BB44D1C00A15019 /* CompassView.swift in Sources */,
+				F795A5792BD92B450008F378 /* QiblaViewModel.swift in Sources */,
 				F7652CF12BB551410004BA8C /* MapKitHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		F71B8D912BD90D89009CAB36 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F71B8D842BD90D87009CAB36 /* QiblaWatch Watch App */;
+			targetProxy = F71B8D902BD90D89009CAB36 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		F71B8D942BD90D89009CAB36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"QiblaWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 68NSAKSP6G;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = QiblaWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = Qibla.Qibla;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Qibla.Qibla.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		F71B8D952BD90D89009CAB36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"QiblaWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 68NSAKSP6G;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = QiblaWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = Qibla.Qibla;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Qibla.Qibla.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
 		F763AD812BB19CF2001C431F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -361,6 +530,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F71B8D932BD90D89009CAB36 /* Build configuration list for PBXNativeTarget "QiblaWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F71B8D942BD90D89009CAB36 /* Debug */,
+				F71B8D952BD90D89009CAB36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F763AD702BB19CF0001C431F /* Build configuration list for PBXProject "Qibla" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

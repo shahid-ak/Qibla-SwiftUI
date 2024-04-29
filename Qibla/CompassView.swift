@@ -2,7 +2,7 @@
 //  CompassView.swift
 //  Qibla
 //
-//  Created by shahid on 27/03/24.
+//  Created by shahid on 25/04/24.
 //
 
 import SwiftUI
@@ -11,6 +11,7 @@ struct CompassView: View {
     
     @ObservedObject var viewModel: QiblaViewModel
     @State var wave = false
+    var mesurements = CompassComponentsMeasurements()
     
     var body: some View {
         GeometryReader { geo in
@@ -21,9 +22,9 @@ struct CompassView: View {
                 VStack {
                     Circle()
                         .fill(Color("transparentGrey"))
-                        .frame(width: 18, height: 18)
-                        .offset(y: -9)
-                        .opacity(viewModel.mode == .ahead ? 0 : 1)
+                        .frame(width: mesurements.circleSize, height: mesurements.circleSize)
+                        .offset(y: -mesurements.circleSize/2)
+                        .opacity(viewModel.mode.isApproxQibla ? 0 : 1)
                     Spacer()
                 }
                 
@@ -31,14 +32,26 @@ struct CompassView: View {
                 ZStack {
                     if viewModel.mode == .right {
                         Circle()
-                            .trim(from: 0.03, to: (viewModel.directionOfKabahTo360Format/360) - 0.03)
+                            .trim(
+                                from: mesurements.semiCirclePadding,
+                                  to: (viewModel.directionOfKabahTo360Format/360) - mesurements.semiCirclePadding
+                            )
                             .rotation(Angle(degrees: -90))
-                            .stroke(Color("semicircleGrey"), style: StrokeStyle(lineWidth: 16, lineCap: .round))
+                            .stroke(
+                                Color("semicircleGrey"),
+                                style: StrokeStyle(lineWidth: mesurements.semiCircleLineWidth,lineCap: .round)
+                            )
                     } else if viewModel.mode == .left {
                         Circle()
-                            .trim(from:(viewModel.directionOfKabahTo360Format/360) + 0.03, to: 0.97)
+                            .trim(
+                                from:(viewModel.directionOfKabahTo360Format/360) + mesurements.semiCirclePadding,
+                                to: 1 - mesurements.semiCirclePadding
+                            )
                             .rotation(Angle(degrees: -90))
-                            .stroke(Color("semicircleGrey"), style: StrokeStyle(lineWidth: 16, lineCap: .round))
+                            .stroke(
+                                Color("semicircleGrey"),
+                                style: StrokeStyle(lineWidth: mesurements.semiCircleLineWidth, lineCap: .round)
+                            )
                     }
                 }
                 
@@ -47,23 +60,32 @@ struct CompassView: View {
                     //top circle
                     ZStack{
                         ZStack{
-                            Circle().fill(.white).frame(width: viewModel.mode == .ahead ? 32 : 18, height: viewModel.mode == .ahead ? 32 : 18)
+                            Circle().fill(.white)
+                                .frame(
+                                    width: viewModel.mode.isApproxQibla ? mesurements.circleSizeExpanded : mesurements.circleSize,
+                                    height: viewModel.mode.isApproxQibla ? mesurements.circleSizeExpanded : mesurements.circleSize
+                                )
                             Image("qibla")
                                 .resizable()
-                                .frame(width: Int(viewModel.directionOfKabahTo360Format) == 0 ? 20 : 16, height: Int(viewModel.directionOfKabahTo360Format) == 0 ? 20 : 16)
-                                .opacity(viewModel.mode == .ahead ? 1 : 0)
+                                .frame(
+                                    width: Int(viewModel.directionOfKabahTo360Format) == 0 ? mesurements.qiblaIconExpanded : mesurements.qiblaIconSize,
+                                    height: Int(viewModel.directionOfKabahTo360Format) == 0 ? mesurements.qiblaIconExpanded : mesurements.qiblaIconSize
+                                )
+                                .opacity(viewModel.mode.isApproxQibla ? 1 : 0)
                         }
-                        if viewModel.mode == .ahead {
+                        if viewModel.mode.isApproxQibla {
+                            //TODO: change for watch
                             PulsatingCircle(mode: $viewModel.mode)
                         }
                     }
-                    .offset(y: -(geo.size.width)/2)
+                    .offset(y: -smallerSide/2)
                     
                     //arrow
                     Image(systemName: "arrow.up")
-                        .font(.system(size: (geo.size.width) * 0.615, weight: .bold))
+                        .font(.system(size: smallerSide * 0.615, weight: .bold))
                         .foregroundColor(.white)
                 }
+                .frame(maxWidth: smallerSide, maxHeight: smallerSide)
                 .rotationEffect(viewModel.directionOfKabah)
             }
             .frame(maxWidth: smallerSide, maxHeight: smallerSide)
@@ -92,7 +114,10 @@ struct PulsatingCircle: View {
             withAnimation(.linear(duration: 1).repeatForever(autoreverses: false)) {
                 animate = true
             }
-            
         }
     }
+}
+
+#Preview {
+    CompassView(viewModel: QiblaViewModel())
 }

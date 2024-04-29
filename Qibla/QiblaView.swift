@@ -40,33 +40,9 @@ struct QiblaView: View {
                 }
                 
                 HStack {
-                    if viewModel.mode == .right {
-                        Text("to your")
-                            .foregroundColor(.white.opacity(0.7))
-                        Text("right")
-                    }
-                    else if viewModel.mode == .left {
-                        Text("to your")
-                            .foregroundColor(.white.opacity(0.7))
-                        Text("left")
-                    }
-                    else {
-                        if Int(viewModel.directionOfKabahTo360Format) == 0 {
-                            Text("facing")
-                                .foregroundColor(.white.opacity(0.7))
-                            Text("Qibla")
-                        } else if viewModel.directionOfKabahTo360Format > 335 {
-                            Text("slight to")
-                                .foregroundColor(.white.opacity(0.7))
-                            Text("left")
-                            
-                        } else {
-                            Text("slight to")
-                                .foregroundColor(.white.opacity(0.7))
-                            Text("right")
-                            
-                        }
-                    }
+                    Text(viewModel.mode.directionVerb)
+                        .foregroundColor(.white.opacity(0.7))
+                    Text(viewModel.mode.directionString)
                 }
                 
                 HStack {
@@ -106,7 +82,7 @@ struct QiblaView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .foregroundColor(.white)
-        .background((viewModel.mode == .ahead ? Color("backgroundPrimary") : Color("backgroundSecondary")).edgesIgnoringSafeArea(.all))
+        .background((viewModel.mode.isApproxQibla ? Color("backgroundPrimary") : Color("backgroundSecondary")).edgesIgnoringSafeArea(.all))
         .onAppear(){
             viewModel.checkIfLocationServicesIsEnabled()
         }

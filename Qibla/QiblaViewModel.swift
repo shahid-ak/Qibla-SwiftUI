@@ -9,7 +9,38 @@ import MapKit
 import SwiftUI
 
 enum Mode {
-    case ahead, right, left
+    case ahead, right, left, slightlyRight, slightlyLeft
+    
+    var directionVerb: String {
+        switch self {
+        case .ahead:
+            return "facing"
+        case .right, .left:
+            return "to your"
+        case .slightlyRight, .slightlyLeft:
+            return "slight to"
+        }
+    }
+    
+    var directionString: String {
+        switch self {
+        case .ahead:
+            return "Qibla"
+        case .right, .slightlyRight:
+            return "right"
+        case .left, .slightlyLeft:
+            return "left"
+        }
+    }
+    
+    var isApproxQibla: Bool {
+        switch self {
+        case .ahead, .slightlyRight, .slightlyLeft:
+            return true
+        case .right, .left:
+            return false
+        }
+    }
 }
 
 class QiblaViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
@@ -22,7 +53,7 @@ class QiblaViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     var bearingOfKabah = Double()
     
-    @Published var currentLocation: String = "Featching....."
+    @Published var currentLocation: String = "Fetching....."
     
     @Published var directionOfKabah = Angle() {
         didSet {
@@ -32,10 +63,13 @@ class QiblaViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
             }
             directionOfKabahTo360Format = theDirectionOfKabah
             if (directionOfKabahTo360Format > 335 && directionOfKabahTo360Format < 360)  || (directionOfKabahTo360Format >= 0 && directionOfKabahTo360Format < 25) {
-                withAnimation {
-                    mode = .ahead
-                }
                 if Int(directionOfKabahTo360Format) == 0 {
+                    withAnimation {
+                        mode = .ahead
+                    }
+                #if os(watchOS)
+                    //WKInterfaceDevice.current().play(.success)
+                #else
                     let impactMed = UIImpactFeedbackGenerator(style: .heavy)
                     impactMed.impactOccurred()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
@@ -43,6 +77,15 @@ class QiblaViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
                     }
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                         impactMed.impactOccurred()
+                    }
+                #endif
+                } else if directionOfKabahTo360Format < 180{
+                    withAnimation {
+                        mode = .slightlyRight
+                    }
+                } else {
+                    withAnimation {
+                        mode = .slightlyLeft
                     }
                 }
             } else {
@@ -92,7 +135,7 @@ class QiblaViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         let newLocation = locations.last!
         location = newLocation
         bearingOfKabah = getBearingBetweenTwoPoints1(location!, latitudeOfKabah: self.latOfKabah, longitudeOfKabah: self.lngOfKabah)
-        if currentLocation == "Featching....." {
+        if currentLocation == "Fetching....." {
             location?.placemark { [weak self] placemark, error in
                 guard let placemark = placemark else {
                     self?.currentLocation = "Unknown..."
